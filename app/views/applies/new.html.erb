@@ -1,0 +1,6 @@
+
+  <h2> Tout d'abord, nous aimerions que vous choisissiez une date à laquelle nous supprimeront vos données (sans fermer votre compte), pour plus de tranquilité.</h2>
+  <%= simple_form_for [ @user, @apply ] do |f| %>
+    <%= f.input :expiracy_date %>
+
+  <% end %>
