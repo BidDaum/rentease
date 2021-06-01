@@ -19,6 +19,6 @@ class RentfilesController < ApplicationController
 
 private
   def rentfile_params
-      params.require(:rentfile).permit(:name, :body, :file)
+    params.require(:rentfile).permit(:name, :body, :photos[])
   end
 end
