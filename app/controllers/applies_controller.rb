@@ -9,6 +9,10 @@ def new
     @apply = Apply.new
 end
 
+def show
+  @apply = Apply.find(params[:id])
+end
+
 def create
   # IL MANQUE la génération d'url et l'ajout des fichiers
   @apply = Apply.new(apply_params)
@@ -17,7 +21,7 @@ def create
   @next_type = required_docs[1 - @apply.checklist] # itération sur l'array des documents requis
 
   if @apply.save
-      redirect_to root_path
+      redirect_to new_apply_rentfile_path(@apply)
   else
       render "new"
   end
