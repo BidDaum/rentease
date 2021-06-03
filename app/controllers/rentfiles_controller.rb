@@ -9,7 +9,7 @@ class RentfilesController < ApplicationController
     @rentfile = Rentfile.new(rentfile_params)
     @apply = Apply.find(params[:apply_id])
     @rentfile.apply_id = @apply.id
-    if @rentfile.save!
+    if @rentfile.save
       flash[:notice] = "It worked!"
       redirect_to new_apply_rentfile_path(@apply)
     else
@@ -19,6 +19,6 @@ class RentfilesController < ApplicationController
 
 private
   def rentfile_params
-    params.require(:rentfile).permit(:name, :body, :photos[])
+    params.require(:rentfile).permit(:name, photos: [] )
   end
 end
