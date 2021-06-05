@@ -1,14 +1,16 @@
 class RentfilesController < ApplicationController
 
   def new
-    redirect_to root_path if params[:count].to_i > Rentfile::MANDATORY_RENTFILES.size - 1
-    if params[:count].nil?
+    @apply = Apply.find(params[:apply_id])
+    redirect_to new_apply_rentfile_path(@apply, optional: "true") if params[:count].to_i > Rentfile::MANDATORY_RENTFILES.size - 1
+    if params[:optional] = "true"
+      @type = Rentfile::OPTIONAL_RENTFILES
+    elsif params[:count] == 0
       @type = Rentfile::MANDATORY_RENTFILES.first
     else
       @type = Rentfile::MANDATORY_RENTFILES[params[:count].to_i]
     end
     @rentfile = Rentfile.new
-    @apply = Apply.find(params[:apply_id])
   end
 
   def create
