@@ -1,52 +1,135 @@
-<% if params[:optional].nil? %>
-  <%= simple_form_for [@apply, @rentfile] do |f|%>
-    <%= f.hidden_field :name, value: @type %>
-    <%= f.input :photos, as: :file, label: @type, input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
-  <%=  link_to("je n'ai pas d'autres fichier à ajouter, retour à mon dossier !", "/../../../apply")%>
-<% else %>
-  <%= simple_form_for [@apply, @rentfile] do |f|%>
-    <%= f.hidden_field :name, value: @type[0] %>
-    <%= f.input :photos, as: :file, label: @type[0], input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+        <% if params[:optional].nil? %>
+          <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type %>
+            <%= f.input :photos, as: :file, label: @type, input_html: { multiple: true } %>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+          <%=  link_to("je n'ai pas d'autres fichier à ajouter, retour à mon dossier !", "/../../../apply")%>
+        <% else %>
+          <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[0] %>
+            <%= f.input :photos, as: :file, label: @type[0], input_html: { multiple: true } %>
+            <%= f.submit "Suivant", class: "bsuivant" %>         
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <%= simple_form_for [@apply, @rentfile] do |f|%>
-    <%= f.hidden_field :name, value: @type[1] %>
-    <%= f.input :photos, as: :file, label: @type[1], input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+          <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[1] %>
+            <%= f.input :photos, as: :file, label: @type[1], input_html: { multiple: true } %>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
 
-  <%= simple_form_for [@apply, @rentfile] do |f|%>
-    <%= f.hidden_field :name, value: @type[2] %>
-    <%= f.input :photos, as: :file, label: @type[2], input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+          <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[2] %>
+            <%= f.input :photos, as: :file, label: @type[2], input_html: { multiple: true } %>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
 
-  <%= simple_form_for [@apply, @rentfile] do |f|%>
-    <%= f.hidden_field :name, value: @type[3] %>
-    <%= f.input :photos, as: :file, label: @type[3], input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+          <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[3] %>
+            <%= f.input :photos, as: :file, label: @type[3], input_html: { multiple: true } %>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
 
-  <%= simple_form_for [@apply, @rentfile] do |f|%>
-    <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+          <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
 
-  <%= simple_form_for [@apply, @rentfile] do |f|%>
-    <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+          <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
 
-  <%= simple_form_for [@apply, @rentfile] do |f|%>
-    <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+          <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
+            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<% end %>
+<%# ---------------------------------------------------- %>
+
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+         <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[1] %>
+            <%= @type[1] %>
+              <div class="zone">
+                <div id="dropZ">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div>Drag and drop your file here</div>                    
+                  <span>OR</span>
+                  <div class="selectFile">       
+                    <label for="file">Select file</label>
+                    <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
+                  </div>
+                <p>File size limit : 10 MB</p>
+              </div>
+            </div>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
