@@ -3,6 +3,8 @@
 <p>Titre: </p><%=apply.title %>
 <p>Date d'expiration: </p><%=apply.expiracy_date %>
 <p>Total de documents: </p><%= apply.rentfiles.count %>
+
+<%= link_to "Delete", apply_path(apply), method: :delete,remote: true, data: { confirm: "Are you sure?" } %>
 <% end %>
 
 <h2> rendre possible la visualisation des fichiers pour chaque apply <h2>
