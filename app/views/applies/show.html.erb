@@ -1,2 +1,4 @@
+<%= @apply.title %>
 <%= @apply.id %>
 <%= @apply.expiracy_date %>
+<%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
