@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :applies, only: [ :new, :create, :index, :show ] do
+  resources :applies, only: [ :new, :create, :index, :show, destroy ] do
     resources :rentfiles, only: [:new, :create]
   end
   devise_for :users
