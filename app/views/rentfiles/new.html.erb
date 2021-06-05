@@ -5,6 +5,7 @@
     <%= f.submit %>
   <% end %>
   <%=  link_to("je n'ai pas d'autres fichier à ajouter, retour à mon dossier !", "/../../../apply")%>
+
 <% else %>
   <%= simple_form_for [@apply, @rentfile] do |f|%>
     <%= f.hidden_field :name, value: @type[0] %>
@@ -32,19 +33,19 @@
 
   <%= simple_form_for [@apply, @rentfile] do |f|%>
     <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photos, label: false, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
   <% end %>
 
   <%= simple_form_for [@apply, @rentfile] do |f|%>
     <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photos, label: false, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
   <% end %>
 
   <%= simple_form_for [@apply, @rentfile] do |f|%>
     <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photos, label: false, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
   <% end %>
 
