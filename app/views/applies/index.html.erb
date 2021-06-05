@@ -1,11 +1,9 @@
 <h1>My applies</h1>
 <% @applies.each do |apply| %>
-<%= apply.id %>
-<%= apply.expiracy_date %>
+<p>Titre: </p><%=apply.title %>
+<p>Date d'expiration: </p><%=apply.expiracy_date %>
+<p>Total de documents: </p><%= apply.rentfiles.count %>
 <% end %>
 
 <h2> rendre possible la visualisation des fichiers pour chaque apply <h2>
 
-<button class="bcta">Start</button>
-<button class="bretour">Retour</button>
-<button class="bsuivant">Suivant</button>
