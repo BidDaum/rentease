@@ -1,4 +1,7 @@
-<%= @apply.title %>
-<%= @apply.id %>
-<%= @apply.expiracy_date %>
+<h1>Votre dossier de location</h1>`
+<h2><%= @apply.title %></h2>
+<h3><%= @apply.expiracy_date %></h3>
+
+<p1><%= @apply.rentfiles[1] %></p1>`
 <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+
