@@ -14,7 +14,7 @@ def show
 end
 
 def create
-  # IL MANQUE la génération d'url et l'ajout des fichiers
+  # IL MANQUE la génération d'url
   @apply = Apply.new(apply_params)
   @apply.user = current_user
   required_docs = ["identité", "bulletin de paie", "justificatif de domicile"]
@@ -33,10 +33,24 @@ def destroy
   redirect_to applies_path
 end
 
+def edit
+  @apply = Apply.find(params[:id])
+end
+
+def update
+  required_docs = ["identité", "bulletin de paie", "justificatif de domicile"]
+  @apply = Apply.find(params[:id])
+  @next_type = required_docs[1 - @apply.checklist]
+  @apply.user = current_user
+  @apply.update(apply_params)
+  # @apply.assign_attributes(apply_params)
+  redirect_to apply_path(@apply)
+end
+
 private
 
   def apply_params
-    params.require(:apply).permit(:id, :user_id, :checklist, :expiracy_date, :url)
+    params.require(:apply).permit(:id, :user_id, :checklist, :expiracy_date, :url, :title)
   end
 
 end
