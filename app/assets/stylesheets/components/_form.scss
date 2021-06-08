@@ -6,4 +6,70 @@
     text-align: center;
     margin: 100px;
     padding: 50px;
+    box-shadow: 0 0 15px rgba(20,8,80,0.2);
+}
+
+
+.zone {      
+  margin: auto;
+  background: #ffffff;
+  width:80%;
+  height:50%;  
+  border:0.5px dashed #172169;
+  text-align:center;
+  color: #172169;
+  z-index: 20;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.05),inset 0 0 .25em 0 rgba(0,0,0,.25);
+  .btnCompression {
+    .btn {
+
+    } 
+    .active {
+      background: #EB6A5A;
+      color:white;
+    }
+  }
+  i {
+    text-align: center;
+    font-size: 10em;  
+    color:#fff;
+    margin-top: 50px;
+  }
+  .selectFile {
+    height: 50px;
+    margin: 20px auto;
+    position: relative;
+    width: 200px;          
+  }
+
+  label, input {
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 5px;          
+  }
+
+  label {
+    background: #fff;
+    color:#172169;
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 50px;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 400;   
+    box-shadow: 0 0 15px rgba(20,8,80,0.2);
+  }
+
+  input[type=file] {
+    opacity: 0;
+  }
+
 }
