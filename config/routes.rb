@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :applies, only: [ :new, :create, :index, :show, :destroy ] do
+  resources :applies, only: [ :new, :create, :index, :show, :destroy, :edit, :update] do
     resources :rentfiles, only: [:new, :create]
   end
   resources :rentfiles, only: [:update]
