@@ -21,91 +21,6 @@
   </div>
 </div>
 
-<div class="container">
-  <div class= "cform">
-    <div class="row">
-      <div class="col-12">
-          <%= simple_form_for [@apply, @rentfile] do |f|%>
-            <%= f.hidden_field :name, value: @type[1] %>
-            <%= f.input :photos, as: :file, label: @type[1], input_html: { multiple: true } %>
-            <%= f.submit "Suivant", class: "bsuivant" %>
-          <% end %>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class= "cform">
-    <div class="row">
-      <div class="col-12">
-          <%= simple_form_for [@apply, @rentfile] do |f|%>
-            <%= f.hidden_field :name, value: @type[2] %>
-            <%= f.input :photos, as: :file, label: @type[2], input_html: { multiple: true } %>
-            <%= f.submit "Suivant", class: "bsuivant" %>
-          <% end %>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class= "cform">
-    <div class="row">
-      <div class="col-12">
-          <%= simple_form_for [@apply, @rentfile] do |f|%>
-            <%= f.hidden_field :name, value: @type[3] %>
-            <%= f.input :photos, as: :file, label: @type[3], input_html: { multiple: true } %>
-            <%= f.submit "Suivant", class: "bsuivant" %>
-          <% end %>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class= "cform">
-    <div class="row">
-      <div class="col-12">
-          <%= simple_form_for [@apply, @rentfile] do |f|%>
-            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <%= f.submit "Suivant", class: "bsuivant" %>
-          <% end %>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class= "cform">
-    <div class="row">
-      <div class="col-12">
-          <%= simple_form_for [@apply, @rentfile] do |f|%>
-            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <%= f.submit "Suivant", class: "bsuivant" %>
-          <% end %>
-        </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class= "cform">
-    <div class="row">
-      <div class="col-12">
-          <%= simple_form_for [@apply, @rentfile] do |f|%>
-            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-            <%= f.submit "Suivant", class: "bsuivant" %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <%# ---------------------------------------------------- %>
 
@@ -135,3 +50,136 @@
   </div>
 </div>
 
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+         <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[2] %>
+            <%= @type[2] %>
+              <div class="zone">
+                <div id="dropZ">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div>Drag and drop your file here</div>                    
+                  <span>OR</span>
+                  <div class="selectFile">       
+                    <label for="file">Select file</label>
+                    <%= f.input :photos, as: :file, label: @type[2], input_html: { multiple: true } %>
+                  </div>
+                <p>File size limit : 10 MB</p>
+              </div>
+            </div>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+         <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[3] %>
+            <%= @type[3] %>
+              <div class="zone">
+                <div id="dropZ">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div>Drag and drop your file here</div>                    
+                  <span>OR</span>
+                  <div class="selectFile">       
+                    <label for="file">Select file</label>
+                    <%= f.input :photos, as: :file, label: @type[3], input_html: { multiple: true } %>
+                  </div>
+                <p>File size limit : 10 MB</p>
+              </div>
+            </div>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+         <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[3] %>
+            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
+              <div class="zone">
+                <div id="dropZ">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div>Drag and drop your file here</div>                    
+                  <span>OR</span>
+                  <div class="selectFile">       
+                    <label for="file">Select file</label>
+                    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                  </div>
+                <p>File size limit : 10 MB</p>
+              </div>
+            </div>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+         <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[3] %>
+            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
+              <div class="zone">
+                <div id="dropZ">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div>Drag and drop your file here</div>                    
+                  <span>OR</span>
+                  <div class="selectFile">       
+                    <label for="file">Select file</label>
+                    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                  </div>
+                <p>File size limit : 10 MB</p>
+              </div>
+            </div>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class= "cform">
+    <div class="row">
+      <div class="col-12">
+         <%= simple_form_for [@apply, @rentfile] do |f|%>
+            <%= f.hidden_field :name, value: @type[3] %>
+            <%= f.input :name, label: "Donnez un nom à votre fichier" %>
+              <div class="zone">
+                <div id="dropZ">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div>Drag and drop your file here</div>                    
+                  <span>OR</span>
+                  <div class="selectFile">       
+                    <label for="file">Select file</label>
+                    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                  </div>
+                <p>File size limit : 10 MB</p>
+              </div>
+            </div>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
+            
+            
+ 
