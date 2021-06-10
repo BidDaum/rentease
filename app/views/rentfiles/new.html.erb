@@ -1,21 +1,33 @@
+<div class="container">
+  <div class= "cform col-12">
+    <div class="row">
+      <div class="col-12">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% if params[:optional].nil? %>
-
   <div class="container">
-    <div class= "cform">
+    <div class= "cform col-12">
       <div class="row">
-        <div class="col-12">
+        <div class="col-8">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
               <%= f.hidden_field :name, value: @type %>
               <%= f.input :photos, as: :file, label: @type, input_html: { multiple: true } %>
               <%= f.submit "Suivant", class: "bsuivant" %>
-              <%=  link_to("je n'ai pas d'autres fichier à ajouter, retour à mon dossier !", "/../../../apply")%>
+              <%= link_to("je n'ai pas d'autres fichier à ajouter, retour à mon dossier !", "/../../../apply")%>
             <% end %>
-          </div>
+        </div>
+        <div class="col-4">
+          <img src= "https://media.giphy.com/media/RPrmB9N6HsMCY/giphy.gif">
+        </div>
       </div>
     </div>
   </div>
-
 <% else %>
 
   <div class="container">
