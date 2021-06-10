@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :rentfiles, only: [:update]
   devise_for :users
   root to: 'pages#home'
+  get 'monprofil', to: 'pages#monprofil'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

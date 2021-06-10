@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand" do%>
     <%= image_tag "https://images.squarespace-cdn.com/content/v1/57d04a7737c581bb6fd2e8b0/1502731672712-57GTY0FGKX6LE92XHOMD/ke17ZwdGBToddI8pDm48kAf-OpKpNsh_OjjU8JOdDKBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwkCFOLgzJj4yIx-vIIEbyWWRd0QUGL6lY_wBICnBy59Ye9GKQq6_hlXZJyaybXpCc/IT+Security+Icon+White+2.png" %>
   <% end %>
 
@@ -9,11 +9,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <%= link_to "Mon Profil", "#", class: "nav-link" %>
+      <li class="nav-item">
+        <%= link_to monprofil_path, class: "nav-link" do %>
+          <p>Mon profil</p>
+        <% end %>
       </li>
       <li class="nav-item">
         <%= link_to "Accueil", "#", class: "nav-link" %>
+      </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://img.icons8.com/dotty/2x/ffffff/power-off-button.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
