@@ -41,7 +41,6 @@ class RentfilesController < ApplicationController
     rentfile.update(rentfile_params)
     apply = rentfile.apply
     redirect_to apply_path(apply)
-
   end
 
 private
