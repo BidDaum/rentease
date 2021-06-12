@@ -8,6 +8,7 @@
 <h2><%= @apply.title %></h2>
 <h3><%= @apply.expiracy_date %></h3>
 
+<p> <%=  link_to("Finalisez et créez votre dossier", finalizedapply_path(@apply)) %></p>
 <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
 <%= link_to "Editer ce fichier !", edit_apply_path(@apply) %>
 
@@ -32,7 +33,7 @@
 >>>>>>> master
 
         <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
-  
+
 </div>
 
 <div class="cards">
