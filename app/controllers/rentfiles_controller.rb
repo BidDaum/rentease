@@ -26,8 +26,16 @@ class RentfilesController < ApplicationController
     end
   end
 
+  def update
+    rentfile = Rentfile.find(params[:id])
+    rentfile.update(rentfile_params)
+    apply = rentfile.apply
+    redirect_to apply_path(apply)
+
+  end
+
 private
   def rentfile_params
-    params.require(:rentfile).permit(:name, photos: [] )
+    params.require(:rentfile).permit(:apply_id, :name, photos: [])
   end
 end
