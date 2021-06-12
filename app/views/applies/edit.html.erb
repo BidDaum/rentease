@@ -3,9 +3,8 @@
         <%= simple_form_for [ @user, @apply ] do |f| %>
           <div class="form-group">
             <%= f.hidden_field :type, as: :hidden, value: @next_type %>
-            <%= f.input :title, label: "Choisissez un titre pour votre dossier de location" %>
             <%= f.input :expiracy_date, label: "A quelle date voulez-vous que vos données personnelles soient automatiquement supprimées" %>
-            <%= f.submit "Commencer à charger les fichiers", class: "btn btn-primary" %>
+            <%= f.submit "Je valide ce changement", class: "btn btn-primary" %>
           </div>
         <% end %>
       </div>
