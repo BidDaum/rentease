@@ -2,8 +2,16 @@
   justify-content: space-between;
   background: #140850;
   font-size: 0.875rem;
+  padding-bottom: 0px;
   .nav-link {
     color: #FFFFFF !important;
+    padding-bottom: 0px;
+  }
+  p {
+    padding: 0px 0px;
+  }
+  img {
+    padding-bottom: 0.4rem;
   }
 }
 
