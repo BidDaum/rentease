@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def monprofil
+    @applies = Apply.where(user_id: User.ids)
+  end
 end
