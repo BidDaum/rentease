@@ -1,12 +1,11 @@
 class AppliesController < ApplicationController
 
-
 def index
-    @applies = Apply.all
+  @applies = Apply.all
 end
 
 def new
-    @apply = Apply.new
+  @apply = Apply.new
 end
 
 def show
@@ -21,9 +20,9 @@ def create
   @next_type = required_docs[1 - @apply.checklist] # itération sur l'array des documents requis
 
   if @apply.save
-      redirect_to new_apply_rentfile_path(@apply)
+    redirect_to new_apply_rentfile_path(@apply)
   else
-      render "new"
+    render "new"
   end
 end
 
@@ -47,10 +46,14 @@ def update
   redirect_to apply_path(@apply)
 end
 
+def finalizedapply
+  @apply = Apply.find(params[:id])
+  @merged_pdf = Cloudinary::Uploader.multi(@apply.id, :format => 'pdf')
+end
+
 private
 
   def apply_params
     params.require(:apply).permit(:id, :user_id, :checklist, :expiracy_date, :url, :title)
   end
-
 end
