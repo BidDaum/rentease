@@ -24,14 +24,18 @@ class RentfilesController < ApplicationController
   end
 
   def create
-    raise
     @rentfile = Rentfile.new(rentfile_params)
     @apply = Apply.find(params[:apply_id])
     @rentfile.apply_id = @apply.id
-    @apply.count += 1
-    if @rentfile.save && @apply.save
-      flash[:notice] = "It worked!"
-      redirect_to new_apply_rentfile_path(@apply, count: @apply.count)
+    if @rentfile.save
+      if params[:rentfile][:from] == "show"
+        redirect_to apply_path(@apply)
+      else
+        @apply.count += 1
+        @apply.save
+        flash[:notice] = "It worked!"
+        redirect_to new_apply_rentfile_path(@apply, count: @apply.count)
+      end
     else
       render "new"
     end

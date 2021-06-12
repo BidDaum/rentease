@@ -25,9 +25,19 @@ file = URI.open(idmod)
 apply1 = Apply.new(title: "Dossier de William")
 apply1.user = william
 apply1.save!
-rentfile1 = Rentfile.new(name: "identité")
+rentfile1 = Rentfile.new(name: "Carte d'identité")
 rentfile1.apply = apply1
 rentfile1.photos.attach(io: file, filename: '5xmmcdrbhygi0v5xsozgc3czxwec.jpg', content_type: 'image/jpg')
 rentfile1.save!
+
+file = URI.open("https://res.cloudinary.com/dx3uj4h7t/image/upload/v1623175270/bpgydu2vl3elmjz9hwv4x7a58yga.jpg")
+rentfile2 = Rentfile.new(name: "Bulletins de salaire")
+rentfile2.apply = apply1
+rentfile2.photos.attach(io: file, filename: 'bpgydu2vl3elmjz9hwv4x7a58yga.jpg', content_type: 'image/jpg')
+file = URI.open("https://res.cloudinary.com/dx3uj4h7t/image/upload/v1623175262/zkh9v341288sssn15nd2dkwedm3j.jpg")
+rentfile2.photos.attach(io: file, filename: 'zkh9v341288sssn15nd2dkwedm3j.jpg', content_type: 'image/jpg')
+file = URI.open("https://res.cloudinary.com/dx3uj4h7t/image/upload/v1623175270/bpgydu2vl3elmjz9hwv4x7a58yga.jpg")
+rentfile2.photos.attach(io: file, filename: 'bpgydu2vl3elmjz9hwv4x7a58yga.jpg', content_type: 'image/jpg')
+rentfile2.save!
 
 puts "FINISHED"
