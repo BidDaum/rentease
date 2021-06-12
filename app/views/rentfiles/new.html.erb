@@ -17,11 +17,21 @@
         <div class="col-8">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
               <%= f.hidden_field :name, value: @type %>
-              <%= f.input :photos, as: :file, label: @type, input_html: { multiple: true } %>
+              <%=  @type %>
+              <div class="zone">
+                <div id="dropZ">
+                  <i class="fa fa-cloud-upload"></i>
+                  <div>Drag and drop your file here</div>                    
+                  <span>OR</span>
+                  <div class="selectFile">       
+                    <label for="file">Select file</label>
+                    <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
+                  </div>
+                <p>File size limit : 10 MB</p>
+              </div>
+            </div>
               <%= f.submit "Suivant", class: "bsuivant" %>
-
-              <%=  link_to("je n'ai pas d'autres fichier à ajouter, retour à mon dossier !", "/../../../apply(@apply)")%>
-
+              <button class="bsuivant" href="/../../../apply(@apply)">je n'ai pas d'autres fichier à ajouter, retour à mon dossier !</button>
             <% end %>
         </div>
         <div class="col-4">
