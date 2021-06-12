@@ -3,7 +3,7 @@
 <h3><%= @apply.expiracy_date %></h3>
 
 <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
-<%= link_to "Editer ce fichier !", edit_apply_path(@apply) %>
+<br>
 
 <% Rentfile::ALL_RENTFILES.each do |rentfile_type|%>
   <%= rentfile_type %>
