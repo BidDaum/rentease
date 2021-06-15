@@ -5,52 +5,62 @@
       <div class="row">
         <div class="col-12">
           <% if params[:count].to_i == 0 %>
-            <% @percent = 5 %>
-            <% @step = "Etape 1/3" %>
+            <% @percent = 33 %>
+            <% @step = "Etape 1/3 - Carte d'identité" %>
           <% elsif params[:count].to_i == 1 %>
-            <%  @percent = 33 %>
-            <% @step = "Etape 2/3" %>
+            <%  @percent = 66 %>
+            <% @step = "Etape 2/3 - Bulletin de salaire" %>
           <% elsif params[:count].to_i == 2 %>
-            <% @percent = 66 %>
-            <% @step = "Etape 3/3" %>
+            <% @percent = 90 %>
+            <% @step = "Etape 3/3 - Justificatif de domicile" %>
           <%  else %>
             <% @percent = 100 %>
           <% end %>
-        <div>
+        </div>
+      </div>
           <p><%= @step %></p>
+      <div class="row">
+        <div class="col-12">
           <div class="progress">
             <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%= @percent %>%" aria-valuenow="<%= @percent %>" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
+        </div>
       </div>
+          <br></br>
+      <div class="row">
+        <div class="col-6">
+            <% if params[:count].to_i == 0 %>
+              <img src= "https://media.giphy.com/media/10rbvXnxudfl5u/giphy.gif" class="gifsize">
+            <% elsif params[:count].to_i == 1 %>
+              <img src= "https://media.giphy.com/media/gTURHJs4e2Ies/giphy.gif" class="gifsize">
+            <% elsif params[:count].to_i == 2 %>
+              <img src= "https://media.giphy.com/media/5mMAGSoG4QQAo/giphy.gif" class="gifsize">
+            <%  else %>
+              <img src= "https://media.giphy.com/media/rQp2NiXSMG50gl0ND6/giphy.gif" class="gifsize">
+            <% end %>
+        </div>
+        <div class="col-6">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
               <%= f.hidden_field :name, value: @type %>
               <%= @type %>
              <div class="zone">
                 <div id="dropZ">
                   <i class="fa fa-cloud-upload"></i>
-                  <div>Drag and drop your file here</div>                    
-                  <span>OR</span>
+                  <div>Faites glisser votre document içi.</div>                    
+                  <span>Ou</span>
                   <div class="selectFile">       
-                    <label for="file">Select file</label>
+                    <label for="file">Téléchargez le</label>
                     <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
                   </div>
-                <p>File size limit : 10 MB</p>
-              </div>
-            </div>
+                <p>Poid limite : 10 MB</p>
+                </div> 
+             </div>
+        </div>
+      </div>
+      <button class="bretour" href="/../../../apply(@apply)">Précédent</button>
               <%= f.submit "Suivant", class: "bsuivant" %>
               <button class="bsuivant" href="/../../../apply(@apply)">Précédent</button>
             <% end %>
-        </div>
-        <div class="col-4">
-          <% if params[:count].to_i == 0 %>
-            <img src= "https://media.giphy.com/media/RPrmB9N6HsMCY/giphy.gif">
-          <% elsif params[:count].to_i == 1 %>
-            <img src= "https://media.giphy.com/media/lptjRBxFKCJmFoibP3/giphy.gif">
-          <% elsif params[:count].to_i == 2 %>
-            <img src= "https://media.giphy.com/media/ddKgtZLfeIKmk/giphy.gif">
-          <%  else %>
-            <img src= "https://media.giphy.com/media/rQp2NiXSMG50gl0ND6/giphy.gif">
-          <% end %>
         </div>
       </div>
     </div>
@@ -74,7 +84,7 @@
         </div>
       </div>
     </div>
-  </div>
+ </div>
 
   <div class="container">
     <div class= "cform">
