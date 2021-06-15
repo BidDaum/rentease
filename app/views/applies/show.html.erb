@@ -5,7 +5,6 @@
 
   <p> <%=  link_to("Finalisez et créez votre dossier", finalizedapply_path(@apply)) %></p>
   <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
-
 </div>
 
 <div class="cards">
@@ -22,6 +21,7 @@
             <i class="fa fa-times" aria-hidden="true"></i>
             <%= simple_form_for [@apply, Rentfile.new] do |f|%>
               <%= f.hidden_field :name, value: rentfile_type %>
+              <%= f.hidden_field :from, value: :show %>
               <%= f.input :photos, input_html: { name: "Ajouter un fichier" }, label: false, as: :file, input_html: { multiple: true } %>
               <%= f.submit value: "Ajouter au dossier" %>
             <% end %>
