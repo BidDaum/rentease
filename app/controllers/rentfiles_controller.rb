@@ -11,7 +11,7 @@ class RentfilesController < ApplicationController
       @type = Rentfile::MANDATORY_RENTFILES[params[:count].to_i]
     end
     @rentfile = Rentfile.new
-    
+
     if params[:count].to_i == 0
       @percent = 5
     elsif params[:count].to_i == 1
