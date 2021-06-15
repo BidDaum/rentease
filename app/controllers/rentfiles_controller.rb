@@ -29,6 +29,7 @@ class RentfilesController < ApplicationController
     @rentfile.apply_id = @apply.id
     @apply.count += 1
     if @rentfile.save && @apply.save
+      UpdateImageTagsJob.perform_later(@rentfile)
       flash[:notice] = "It worked!"
       redirect_to new_apply_rentfile_path(@apply, count: @apply.count)
     else
