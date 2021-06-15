@@ -1,29 +1,23 @@
 
 <div class="container">
-  
-  <div class= "cform">
-    
+  <div class= "cfirst">
     <div class="row">
       <div class="col-12">
         <h1> Bienvenue dans la création de votre dossier </h1>
-        <h2> Tout d'abord, choisissiez une date à laquelle nous supprimerons vos données (sans fermer votre compte), pour plus de tranquilité.</h2>
       </div>
     </div>
-    
     <div class="row">
       <div class="col-12">
         <%= simple_form_for [ @user, @apply ] do |f| %>
           <div class="form-group">
             <%= f.hidden_field :type, as: :hidden, value: @next_type %>
             <h3> <%= f.input :title, label: "Choisissez un titre pour votre dossier de location" %> </h3>
-            <%= f.input :expiracy_date, label: "A quelle date voulez-vous que vos données personnelles soient automatiquement supprimées" %>
+            <h3><%= f.input :expiracy_date, label: "A quelle date voulez-vous que vos données personnelles soient automatiquement supprimées ?" %> </h3>
             <%= f.submit "Commencer à charger mes fichiers", class: "bsuivant" %>
           </div>
         <% end %>
       </div>
     </div>
-  
   </div>
-  
 </div>
 
