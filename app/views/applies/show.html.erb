@@ -25,6 +25,11 @@
         <%= f.hidden_field :name, value: rentfile_type %>
 
 
+  <p> <%=  link_to("Finalisez et créez votre dossier", finalized_apply_path(@apply)) %></p>
+  <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
+</div>
+
+
         <div class="zone">
                 <div id="dropZ">
                   <i class="fa fa-cloud-upload"></i>

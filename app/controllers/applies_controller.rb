@@ -21,10 +21,15 @@ def create
 
   if @apply.save
     redirect_to new_apply_rentfile_path(@apply)
+
+  # Il faut générer un pdf via WickedPdf avec un render to string. Puis le ratacher à un rentfile
+  # qui est lui même attaché à un rentfile
+  # rentfile.create --> rentfile.photos.attached (seulement si apply.save = true)
   else
     render "new"
   end
 end
+
 
 def destroy
   @apply = Apply.find(params[:id])
@@ -46,7 +51,7 @@ def update
   redirect_to apply_path(@apply)
 end
 
-def finalizedapply
+def finalized_apply
   @apply = Apply.find(params[:id])
   @merged_pdf = Cloudinary::Uploader.multi(@apply.id, :format => 'pdf')
 end
