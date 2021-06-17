@@ -10,6 +10,7 @@
     <p> <%=  link_to("Finalisez et créez votre dossier", finalized_apply_path(@apply),class: "bsuivant") %></p>
   </div>
 
+
   <div class="cards">
     <% Rentfile::ALL_RENTFILES.each do |rentfile_type|%>
       <div class=ldoc><%= rentfile_type %></div>

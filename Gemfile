@@ -37,6 +37,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'combine_pdf'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 
 group :development, :test do  gem 'pry-byebug'

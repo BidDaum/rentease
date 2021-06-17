@@ -43,29 +43,28 @@
             <%= simple_form_for [@apply, @rentfile] do |f|%>
               <%= f.hidden_field :name, value: @type %>
               <%= @type %>
-             <div class="zone">
-                <div id="dropZ">
-                  <i class="fa fa-cloud-upload"></i>
-                  <div>Faites glisser votre document içi.</div>
-                  <span>Ou</span>
-                  <div class="selectFile">
-                    <label for="file">Téléchargez le</label>
-                    <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
+               <div class="zone">
+                  <div id="dropZ">
+                    <i class="fa fa-cloud-upload"></i>
+                    <div>Faites glisser votre document içi.</div>
+                    <span>Ou</span>
+                    <div class="selectFile">
+                      <label for="file">Téléchargez le</label>
+                      <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
+                    </div>
+                  <p>Poid limite : 10 MB</p>
                   </div>
-                <p>Poid limite : 10 MB</p>
-                </div>
-             </div>
-        </div>
-      </div>
-      <button class="bretour" href="/../../../apply(@apply)">Précédent</button>
-              <%= f.submit "Suivant", class: "bsuivant" %>
-              <button class="bsuivant" href="/../../../apply(@apply)">Précédent</button>
-            <% end %>
+               </div>
+            <button class="bretour" href="/../../../apply(@apply)">Précédent</button>
+            <%= f.submit "Suivant", class: "bsuivant" %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+
 <% else %>
+
 
 
 <div class="container">
@@ -73,7 +72,6 @@
   <p class= submit> <%=  link_to("Si vous ne souhaitez pas ajouter de document optionel cliquez içi", apply_path(@apply)) %></p>
 
   <p> <%=  link_to("Finalisez et créez votre dossier", finalized_apply_path(@apply)) %></p>
-
 
   <div class="container">
     <div class="progress">

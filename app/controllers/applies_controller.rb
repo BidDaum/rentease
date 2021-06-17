@@ -14,14 +14,15 @@ end
 
 def create
   # IL MANQUE la génération d'url
-  @apply = Apply.new(apply_params)
-  @apply.user = current_user
+  apply = Apply.new(apply_params)
+  apply.user = current_user
   required_docs = ["identité", "bulletin de paie", "justificatif de domicile"]
-  @next_type = required_docs[1 - @apply.checklist] # itération sur l'array des documents requis
+  next_type = required_docs[1 - apply.checklist] # itération sur l'array des documents requis
 
-  if @apply.save
-    redirect_to new_apply_rentfile_path(@apply)
-
+  if apply.save
+    rentfile = Rentfile.create(apply: apply, name: "cover_page_#{apply.id}")
+    CoverPageJob.perform_now(apply, rentfile)
+    redirect_to new_apply_rentfile_path(apply)
   # Il faut générer un pdf via WickedPdf avec un render to string. Puis le ratacher à un rentfile
   # qui est lui même attaché à un rentfile
   # rentfile.create --> rentfile.photos.attached (seulement si apply.save = true)
@@ -29,7 +30,6 @@ def create
     render "new"
   end
 end
-
 
 def destroy
   @apply = Apply.find(params[:id])
@@ -53,7 +53,15 @@ end
 
 def finalized_apply
   @apply = Apply.find(params[:id])
+  @apply.rentfiles.each do |rentfile|
+    UpdateImageTagsJob.perform_now(rentfile)
+  end
   @merged_pdf = Cloudinary::Uploader.multi(@apply.id, :format => 'pdf')
+end
+
+def cover_page
+  @apply = Apply.find(params[:id])
+  @user = User.where(user_id: @apply.user_id)
 end
 
 private
