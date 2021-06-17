@@ -2,11 +2,12 @@
 <div class="container">
 
 <div class=cfirst>
-  <div class="container">
+  <div class="titre">
     <h1>Votre dossier de location</h1>
       <h2><%= @apply.title %></h2>
         <h3>Date d'expiration : <%= @apply.expiracy_date %></h3>
-          <button class= "bsuivant"> <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %> </button>
+    <%= link_to "Supprimer ce dossier", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "bsuivant" %>
+    <p> <%=  link_to("Finalisez et créez votre dossier", finalized_apply_path(@apply),class: "bsuivant") %></p>
   </div>
 
   <div class="cards">
@@ -14,37 +15,19 @@
       <div class=ldoc><%= rentfile_type %></div>
       <% rentfile = Rentfile.find_by(apply_id: @apply.id, name: rentfile_type) %>
       <% if rentfile %>
-      <i class="fa fa-check" aria-hidden="true"></i>
-      <%= simple_form_for rentfile do |f|%>
-        <%= f.input :photos, input_html: { name: "Modifier votre fichier" }, label: false, as: :file, input_html: { multiple: true } %>
-        <%= f.submit value: "Mettre à jour", class: "bsuivant" %>
+        <i class="fa fa-check" aria-hidden="true"></i>
+          <%= simple_form_for rentfile do |f|%>
+          <div class="flex-container">
+            <div class="flex-item"> <%= f.input :photos, input_html: { name: "Modifier votre fichier" }, label: false, as: :file, input_html: { multiple: true } %></div>
+            <div class="flex-item"> <%= f.submit value: "Mettre à jour", class: "bsuivant" %></div>
+          </div>
         <% end %>
       <% else %>
-      <i class="fa fa-times" aria-hidden="true"></i>
-      <%= simple_form_for [@apply, Rentfile.new] do |f|%>
-        <%= f.hidden_field :name, value: rentfile_type %>
-
-
-  <p> <%=  link_to("Finalisez et créez votre dossier", finalized_apply_path(@apply)) %></p>
-  <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
-</div>
-
-
-        <div class="zone">
-                <div id="dropZ">
-                  <i class="fa fa-cloud-upload"></i>
-                  <div>Drag and drop your file here</div>                    
-                  <span>OR</span>
-                  <div class="selectFile">       
-                    <label for="file">Select file</label>
-        <%= f.input :photos, input_html: { name: "Ajouter un fichier" }, label: false, as: :file, input_html: { multiple: true } %>
-        </div>
-           <p>File size limit : 10 MB</p>
-              </div>
-            </div>
-        <%= f.submit value: "Ajouter au dossier", class: "bsuivant"%>
-        
-        
+        <i class="fa fa-times" aria-hidden="true"></i>
+        <%= simple_form_for [@apply, Rentfile.new] do |f|%>
+          <%= f.hidden_field :name, value: rentfile_type %>
+         <%= f.input :photos, input_html: { name: "Ajouter un fichier" }, label: false, as: :file, input_html: { multiple: true } %>
+         <%= f.submit value: "Ajouter au dossier" %>
         <% end %>
       <% end %>
     <% end %>

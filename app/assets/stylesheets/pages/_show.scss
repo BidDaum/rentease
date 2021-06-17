@@ -1,11 +1,29 @@
 .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 16px;
+    display: inline-grid;
+    grid-template-columns: 1fr ​1fr 1fr;
+    grid-gap: 1px;
+    width: -webkit-fill-available;
   }
 
 .ldoc {
   text-align: left;
+}
+
+.titre {
+  margin-bottom: 60px;
+}
+
+.edit_rentfile {
+  width: 520px;
+}
+
+.flex-item {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.flex-container {
+  width: max-content;
 }
   
   // Smallest device
