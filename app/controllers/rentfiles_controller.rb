@@ -37,8 +37,6 @@ class RentfilesController < ApplicationController
         flash[:notice] = "It worked!"
         redirect_to new_apply_rentfile_path(@apply, count: @apply.count)
       end
-    else
-      render "new"
     end
   end
 

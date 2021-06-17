@@ -23,7 +23,6 @@ def create
     rentfile = Rentfile.create(apply: apply, name: "cover_page_#{apply.id}")
     CoverPageJob.perform_now(apply, rentfile)
     redirect_to new_apply_rentfile_path(apply)
-
   # Il faut générer un pdf via WickedPdf avec un render to string. Puis le ratacher à un rentfile
   # qui est lui même attaché à un rentfile
   # rentfile.create --> rentfile.photos.attached (seulement si apply.save = true)
@@ -31,7 +30,6 @@ def create
     render "new"
   end
 end
-
 
 def destroy
   @apply = Apply.find(params[:id])
