@@ -53,9 +53,7 @@ end
 
 def finalized_apply
   @apply = Apply.find(params[:id])
-  @apply.rentfiles.each do |rentfile|
-    UpdateImageTagsJob.perform_now(rentfile)
-  end
+  UpdateImageTagsJob.perform_now(@apply)
   @merged_pdf = Cloudinary::Uploader.multi(@apply.id, :format => 'pdf')
 end
 
