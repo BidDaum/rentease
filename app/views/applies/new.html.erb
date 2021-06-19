@@ -5,7 +5,7 @@
     
     <div class="row">
       <div class="col-12">
-        <h2> Tout d'abord, nous aimerions que vous choisissiez une date à laquelle nous supprimerons vos données (sans fermer votre compte), pour plus de tranquilité.</h2>
+        <h2>Let's go</h2>
       </div>
     </div>
     
@@ -14,9 +14,9 @@
         <%= simple_form_for [ @user, @apply ] do |f| %>
           <div class="form-group">
             <%= f.hidden_field :type, as: :hidden, value: @next_type %>
-            <%= f.input :title, label: "Choisissez un titre pour votre dossier de location" %>
-            <%= f.input :expiracy_date, label: "A quelle date voulez-vous que vos données personnelles soient automatiquement supprimées" %>
-            <%= f.submit "Commencer à charger les fichiers", class: "btn btn-primary" %>
+            <%= f.input :title, label: "Nommez votre dossier de location" %>
+            <%= f.input :expiracy_date, label: "Pour un maximum de sécurité, choissisez la date à laquelle votre dossier sera supprimé" %>
+            <%= f.submit "Commencer à charger les fichiers", class: "bcta" %>
           </div>
         <% end %>
       </div>
