@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :applies, only: [ :new, :create, :index, :show, :destroy, :edit, :update] do
     resources :rentfiles, only: [:new, :create]
+    member do
+      post :share
+    end
   end
   resources :rentfiles, only: [:update]
   devise_for :users

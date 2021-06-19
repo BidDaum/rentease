@@ -58,3 +58,15 @@
     border: none;
     padding-inline: 43px;
     }
+
+.box {
+      display: inline-block;
+      padding: 10px 20px;
+      border-right: 1px solid;
+      border-left: 1px solid;
+      background: linear-gradient(to right, #000 calc(50% - 5px), transparent calc(50% - 5px), transparent calc(50% + 5px), #000 calc(50% + 5px)), linear-gradient(to right, #000 calc(50% - 5px), transparent calc(50% - 5px), transparent calc(50% + 5px), #000 calc(50% + 5px));
+      background-size: 150% 1px;
+      background-position: top left, bottom right;
+      background-repeat: no-repeat;
+      transition: .8s all
+  }
