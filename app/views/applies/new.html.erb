@@ -1,14 +1,12 @@
 
 <div class="container">
-  
-  <div class= "cform">
-    
+  <div class= "cfirst">
     <div class="row">
       <div class="col-12">
         <h2>Let's go</h2>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-12">
         <%= simple_form_for [ @user, @apply ] do |f| %>
@@ -17,12 +15,11 @@
             <%= f.input :title, label: "Nommez votre dossier de location" %>
             <%= f.input :expiracy_date, label: "Pour un maximum de sécurité, choissisez la date à laquelle votre dossier sera supprimé" %>
             <%= f.submit "Commencer à charger les fichiers", class: "bcta" %>
+
           </div>
         <% end %>
       </div>
     </div>
-  
   </div>
-  
 </div>
 

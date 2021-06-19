@@ -1,58 +1,36 @@
-<<<<<<< HEAD
-<div class="cards">
-  <h1>Votre dossier de location</h1>
-  <h2><%= @apply.title %></h2>
-  <h3><%= @apply.expiracy_date %></h3>
-=======
-<h1>Votre dossier de location</h1>
-<h2><%= @apply.title %></h2>
-<h3><%= @apply.expiracy_date %></h3>
 
-<p> <%=  link_to("Finalisez et créez votre dossier", finalizedapply_path(@apply)) %></p>
-<%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
-<%= link_to "Editer ce fichier !", edit_apply_path(@apply) %>
+<div class="container">
 
-<% Rentfile::ALL_RENTFILES.each do |rentfile_type|%>
-  <%= rentfile_type %>
-  <% rentfile = Rentfile.find_by(apply_id: @apply.id, name: rentfile_type) %>
-  <% if rentfile %>
-    <i class="fa fa-check" aria-hidden="true"></i>
-    <%= simple_form_for rentfile do |f|%>
-      <%= f.input :photos, input_html: { name: "Modifier votre fichier" }, label: false, as: :file, input_html: { multiple: true } %>
-      <%= f.submit value: "Mettre à jour" %>
-    <% end %>
-  <% else %>
-    <i class="fa fa-times" aria-hidden="true"></i>
-    <%= simple_form_for [@apply, Rentfile.new] do |f|%>
-      <%= f.hidden_field :name, value: rentfile_type %>
-      <%= f.input :photos, input_html: { name: "Ajouter un fichier" }, label: false, as: :file, input_html: { multiple: true } %>
-      <%= f.submit value: "Ajouter au dossier" %>
-    <% end %>
-  <% end %>
-<% end %>
->>>>>>> master
+<div class=cfirst>
+  <div class="titre">
+    <h1>Votre dossier de location</h1>
+      <h2><%= @apply.title %></h2>
+        <h3>Date d'expiration : <%= @apply.expiracy_date %></h3>
+    <%= link_to "Supprimer ce dossier", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "bsuivant" %>
+    <p> <%=  link_to("Finalisez et créez votre dossier", finalized_apply_path(@apply),class: "bsuivant") %></p>
+  </div>
 
-        <%= link_to "Supprimer ce dossier !", @apply, method: :delete, remote: true, data: { confirm: "Are you sure?" } %>
 
-</div>
-
-<div class="cards">
-        <% Rentfile::ALL_RENTFILES.each do |rentfile_type|%>
-          <%= rentfile_type %>
-          <% rentfile = Rentfile.find_by(apply_id: @apply.id, name: rentfile_type) %>
-          <% if rentfile %>
-            <i class="fa fa-check" aria-hidden="true"></i>
-            <%= simple_form_for rentfile do |f|%>
-              <%= f.input :photos, input_html: { name: "Modifier votre fichier" }, label: false, as: :file, input_html: { multiple: true } %>
-              <%= f.submit value: "Mettre à jour" %>
-            <% end %>
-          <% else %>
-            <i class="fa fa-times" aria-hidden="true"></i>
-            <%= simple_form_for [@apply, Rentfile.new] do |f|%>
-              <%= f.hidden_field :name, value: rentfile_type %>
-              <%= f.input :photos, input_html: { name: "Ajouter un fichier" }, label: false, as: :file, input_html: { multiple: true } %>
-              <%= f.submit value: "Ajouter au dossier" %>
-            <% end %>
-          <% end %>
+  <div class="cards">
+    <% Rentfile::ALL_RENTFILES.each do |rentfile_type|%>
+      <div class=ldoc><%= rentfile_type %></div>
+      <% rentfile = Rentfile.find_by(apply_id: @apply.id, name: rentfile_type) %>
+      <% if rentfile %>
+        <i class="fa fa-check" aria-hidden="true"></i>
+          <%= simple_form_for rentfile do |f|%>
+          <div class="flex-container">
+            <div class="flex-item"> <%= f.input :photos, input_html: { name: "Modifier votre fichier" }, label: false, as: :file, input_html: { multiple: true } %></div>
+            <div class="flex-item"> <%= f.submit value: "Mettre à jour", class: "bsuivant" %></div>
+          </div>
         <% end %>
+      <% else %>
+        <i class="fa fa-times" aria-hidden="true"></i>
+        <%= simple_form_for [@apply, Rentfile.new] do |f|%>
+          <%= f.hidden_field :name, value: rentfile_type %>
+         <%= f.input :photos, input_html: { name: "Ajouter un fichier" }, label: false, as: :file, input_html: { multiple: true } %>
+         <%= f.submit value: "Ajouter au dossier" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
