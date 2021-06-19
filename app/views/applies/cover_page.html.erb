@@ -1,4 +1,8 @@
 
-<h1><%= cover.title %></h1>
-<p><%= cover.updated_at %></p>
-<p><%= cover.user.email %></p>
+<h1 class="text-center"><%= cover.title %></h1>
+
+<div class="position-absolute top-0 end-0 red-corner">
+<p>Nom:<%= cover.user.name.upcase %></p>
+<p>PRENOM: <%= cover.user.first_name.capitalize() %></p>
+<p>Mail: <%= cover.user.email %></p>
+</div>

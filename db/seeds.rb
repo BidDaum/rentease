@@ -14,10 +14,10 @@ User.destroy_all
 Apply.destroy_all
 
 
-guillaume = User.new(password: "123456", email: "guillaume@rentease.com")
-william = User.new(password: "123456", email: "william@rentease.com")
-brice = User.new(password: "123456", email: "brice@rentease.com")
-adrien = User.new(password: "123456", email: "adrien@rentease.com")
+guillaume = User.new(password: "123456", email: "guillaume@rentease.com", name: "Fraud", first_name: "Guillaume")
+william = User.new(password: "123456", email: "william@rentease.com", name: "Allin", first_name: "William")
+brice = User.new(password: "123456", email: "brice@rentease.com", name: "Levasseur", first_name: "Brice")
+adrien = User.new(password: "123456", email: "adrien@rentease.com", name: "Bellamy", first_name: "Adrien")
 id= "https://res.cloudinary.com/dx3uj4h7t/image/upload/v1623431434/5xmmcdrbhygi0v5xsozgc3czxwec.jpg"
 idmod = "https://res.cloudinary.com/dx3uj4h7t/image/upload/l_DERFER-removebg-preview_xmllht/v1623431434/5xmmcdrbhygi0v5xsozgc3czxwec.jpg"
 
