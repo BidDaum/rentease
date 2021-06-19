@@ -71,16 +71,18 @@
 <% else %>
 
 <div class="container">
+  <br></br>
+  <h4>Good job, vous avez chargé 100% des documents obligatoires</h4>
+  <br></br>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
   <img src= "https://media.giphy.com/media/rQp2NiXSMG50gl0ND6/giphy.gif" class="gifsize"> 
   <p class= submit> <%=  link_to("Si vous ne souhaitez pas ajouter de document optionel cliquez içi", apply_path(@apply)) %></p>
 
-  <p> <%=  link_to("Finalisez et créez votre dossier", finalizedapply_path(@apply)) %></p>
+  <p class= submit> <%=  link_to("Finalisez et créez votre dossier", finalizedapply_path(@apply)) %></p>
 
-  <div class="container">
-    <div class="progress">
-      <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
-    <div class= "cform">
+    <div class= "cform col12">
       <div class="row">
         <div class="col-12">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
@@ -91,10 +93,9 @@
         </div>
       </div>
     </div>
- </div>
 
 
-  <div class="container">
+
     <div class= "cform">
       <div class="row">
         <div class="col-12">
@@ -106,9 +107,9 @@
           </div>
       </div>
     </div>
-  </div>
+  
 
-  <div class="container">
+  
     <div class= "cform">
       <div class="row">
         <div class="col-12">
@@ -120,9 +121,9 @@
           </div>
       </div>
     </div>
-  </div>
+  
 
-  <div class="container">
+  
     <div class= "cform">
       <div class="row">
         <div class="col-12">
@@ -134,9 +135,9 @@
           </div>
       </div>
     </div>
-  </div>
+  
 
-  <div class="container">
+  
     <div class= "cform">
       <div class="row">
         <div class="col-12">
@@ -148,9 +149,9 @@
           </div>
       </div>
     </div>
-  </div>
+  
 
-  <div class="container">
+  
     <div class= "cform">
       <div class="row">
         <div class="col-12">
@@ -162,9 +163,9 @@
           </div>
       </div>
     </div>
-  </div>
+  
 
-  <div class="container">
+  
     <div class= "cform">
       <div class="row">
         <div class="col-12">
@@ -177,4 +178,4 @@
         </div>
       </div>
     </div>
-  </div>
+</div>
