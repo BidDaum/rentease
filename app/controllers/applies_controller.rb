@@ -53,7 +53,7 @@ end
 
 def finalized_apply
   @apply = Apply.find(params[:id])
- # UpdateImageTagsJob.perform_now(@apply)
+  # UpdateImageTagsJob.perform_now(@apply)
   @merged_pdf = Cloudinary::Uploader.multi(@apply.id, :format => 'pdf')
 end
 
@@ -62,9 +62,16 @@ def cover_page
   @user = User.where(user_id: @apply.user_id)
 end
 
+def share
+  raise
+  # Get apply id
+  # Call mailer with email in params
+  UserMailer.with(apply_id: "", email: "").simple_message.deliver_later
+end
+
 private
 
   def apply_params
-    params.require(:apply).permit(:id, :user_id, :checklist, :expiracy_date, :url, :title)
+    params.require(:apply).permit(:id, :user_id, :checklist, :expiracy_date, :url, :title, :email)
   end
 end
