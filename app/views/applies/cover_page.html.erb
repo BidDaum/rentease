@@ -1,4 +1,16 @@
 
-<h1><%= cover.title %></h1>
-<p><%= cover.updated_at %></p>
-<p><%= cover.user.email %></p>
+<style>
+
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+<div style= "width:50%; margin: 0 auto; border: 3px solid black; padding: 20px;">
+<h1 style= "text-align: center; text-transform: uppercase; margin-bottom: 30px;"><%= cover.title %></h1>
+
+
+<p style= "text-align: center;">Nom: <%= cover.user.name.upcase %></p>
+<p style= "text-align: center;">Prenom: <%= cover.user.first_name.capitalize() %></p>
+<p style= "text-align: center;">Mail: <%= cover.user.email %></p>
+</div>
+
+<p style = position: absolute; top:100% ; text-align: center;> Dossier construit avec Rentease </p>
