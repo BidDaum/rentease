@@ -1,0 +1,36 @@
+#finalized_apply {
+  background-color: #ffffff;
+  text-align: center;
+  border-color: black;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(20,8,80,0.2);
+  margin: 0;
+}
+
+#shared-apply {
+  display:flex;
+  align-items: center;
+}
+
+.sharing-method {
+  text-align: center;
+  width: 100%;
+}
+
+.apply-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 35px auto;
+
+  > div {
+    flex: 0 0 auto;
+    &:first-child {
+      width: 60%;
+    }
+    &:last-child {
+      width: 35%;
+    }
+  }
+}
