@@ -54,7 +54,7 @@ end
 def finalized_apply
   @apply = Apply.find(params[:id])
   UpdateImageTagsJob.perform_now(@apply)
-  @merged_pdf = Cloudinary::Uploader.multi(@apply.id, :format => 'pdf')
+  @merged_pdf = Cloudinary::Uploader.multi({@apply.id}, :format => 'pdf')
 end
 
 def cover_page
