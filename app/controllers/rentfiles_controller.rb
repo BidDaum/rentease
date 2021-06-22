@@ -28,7 +28,7 @@ class RentfilesController < ApplicationController
     @apply = Apply.find(params[:apply_id])
     @rentfile.apply_id = @apply.id
     if @rentfile.save
-      UpdateImageTagsJob.perform_later(@rentfile.apply)
+      # UpdateImageTagsJob.perform_now(@rentfile.apply)
       if params[:rentfile][:from] == "show"
         redirect_to apply_path(@apply)
       else
