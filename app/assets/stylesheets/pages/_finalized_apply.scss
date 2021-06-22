@@ -1,20 +1,62 @@
-#finalized_apply {
+// #finalized_apply {
+//   background-color: #ffffff;
+//   text-align: center;
+//   border-color: black;
+//   width: 100%;
+//   box-shadow: 0 0 15px rgba(20,8,80,0.2);
+//   margin: 0;
+// }
+
+#finalized-apply-banner {
+      height: 30%;
+  }
+
+#finalized-apply-banner {
+    background: asset-url("monprofil_pic.jpg") no-repeat center bottom fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+.bfinalized {
+  font-size: regular;
   background-color: #ffffff;
+  border-radius: 40px;
+  color: #172169;
   text-align: center;
-  border-color: black;
-  width: 100%;
-  box-shadow: 0 0 15px rgba(20,8,80,0.2);
-  margin: 0;
+  width: fit-content;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px auto;
+  border-color: #172169;
+  padding: 5px 10px;
+  display: inline-flex;
+  align-items: center;
 }
+
 
 #shared-apply {
   display:flex;
   align-items: center;
+  justify-content: space-around;
+  padding-left: 20px;
+  padding-right: 100px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 .sharing-method {
   text-align: center;
   width: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  border-color: black;
+  text-align: center;
+  margin: 45px;
+  position: relative;
+  padding: 32px;
+  box-shadow: 0 0 15px rgba(20,8,80,0.2);
 }
 
 .apply-container {
@@ -23,6 +65,7 @@
   justify-content: space-between;
   width: 90%;
   margin: 35px auto;
+  margin-top: 20px;
 
   > div {
     flex: 0 0 auto;
