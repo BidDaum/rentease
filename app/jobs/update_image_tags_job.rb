@@ -6,11 +6,13 @@ class UpdateImageTagsJob < ApplicationJob
     # image_keys.each do |key|
     #   Cloudinary::Api.update(key, tags: [rentfile.apply_id])
     # end
-    @apply = Apply.find(params[:id])
-    all_image_keys = apply.rentfiles.map(&:photos).flatten.map(&:key)
-    all_image_keys.each_with_index do |key, index|
-      Cloudinary::Api.update(key, tags: "#{@apply.id} #{@apply.user.name}")
-      Cloudinary::Uploader.rename(key, "#{index}-#{key}", options = {overwrite: true})
+
+    all_documents = apply.rentfiles.map(&:photos).flatten
+    all_documents.each_with_index do |doc, index|
+      new_key = "#{index}-#{doc.key}"
+      Cloudinary::Api.update(doc.key, tags: "#{apply.id}")
+      Cloudinary::Uploader.rename(doc.key, new_key, options = {overwrite: true})
+      doc.blob.update(key: new_key)
     end
   end
 end
