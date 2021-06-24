@@ -19,8 +19,8 @@
         </div>
       </div>
           <p><%= @step %></p>
-      <div class="row">
-        <div class="col-12">
+      <div class="row justify-content-center">
+        <div class="col-8">
           <div class="progress">
             <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%= @percent %>%" aria-valuenow="<%= @percent %>" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
@@ -30,13 +30,13 @@
       <div class="row align-items-center">
         <div class="col-6">
             <% if params[:count].to_i == 0 %>
-              <img src= "https://media.giphy.com/media/10rbvXnxudfl5u/giphy.gif" class="gifsize">
+              <img src= "https://media.giphy.com/media/10rbvXnxudfl5u/giphy.gif" class="gifsizeone">
             <% elsif params[:count].to_i == 1 %>
-              <img src= "https://media.giphy.com/media/gTURHJs4e2Ies/giphy.gif" class="gifsize">
+              <img src= "https://media.giphy.com/media/gTURHJs4e2Ies/giphy.gif" class="gifsizeone">
             <% elsif params[:count].to_i == 2 %>
-              <img src= "https://media.giphy.com/media/5mMAGSoG4QQAo/giphy.gif" class="gifsize">
+              <img src= "https://media.giphy.com/media/5mMAGSoG4QQAo/giphy.gif" class="gifsizeone">
             <%  else %>
-              <img src= "https://media.giphy.com/media/rQp2NiXSMG50gl0ND6/giphy.gif" class="gifsize">
+              <img src= "https://media.giphy.com/media/rQp2NiXSMG50gl0ND6/giphy.gif" class="gifsizeone">
             <% end %>
         </div>
         <div class="col-6">
@@ -67,7 +67,7 @@
 <div class="container">
 
   <br></br>
-  <h4 class="text-center">Good job, vous avez chargé 100% des documents obligatoires</h4>
+  <h4 class="text-center">Bien joué, vous avez chargé 100% des documents obligatoires</h4>
   
   <div class="row align-items-center">
     
@@ -82,7 +82,7 @@
 <div class= "cform">
     <div class="row align-items-center">
       <div class="col-6">
-            <img src= "https://media.giphy.com/media/9o9dh1JRGThC1qxGTJ/giphy.gif" class="gifsize">
+            <img src= "https://media.giphy.com/media/9o9dh1JRGThC1qxGTJ/giphy.gif" class="gifsizetwo">
       </div>
       <div class="col-6">
           <%= simple_form_for [@apply, @rentfile] do |f|%>
@@ -111,7 +111,7 @@
 <div class= "cform">
       <div class="row align-items-center">
         <div class="col-6">
-              <img src= "https://media.giphy.com/media/h0MTqLyvgG0Ss/giphy.gif" class="gifsize"> 
+              <img src= "https://media.giphy.com/media/h0MTqLyvgG0Ss/giphy.gif" class="gifsizetwo"> 
         </div>
         <div class="col-6">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
@@ -144,7 +144,7 @@
 <div class= "cform">
       <div class="row align-items-center">
         <div class="col-6">
-              <img src= "https://media.giphy.com/media/qojMeV7qOvzcGUgvbE/giphy.gif" class="gifsize">
+              <img src= "https://media.giphy.com/media/qojMeV7qOvzcGUgvbE/giphy.gif" class="gifsizetwo">
         </div>
         <div class="col-6">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
@@ -177,7 +177,7 @@
 <div class= "cform">
       <div class="row align-items-center">
         <div class="col-6">
-              <img src= "https://media.giphy.com/media/3o6ZtmTwUGNObM38dO/giphy.gif" class="gifsize">
+              <img src= "https://media.giphy.com/media/3o6ZtmTwUGNObM38dO/giphy.gif" class="gifsizetwo">
         </div>
         <div class="col-6">
             <%= simple_form_for [@apply, @rentfile] do |f|%>

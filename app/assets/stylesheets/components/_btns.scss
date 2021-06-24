@@ -22,7 +22,7 @@
 
 //Boutons formulaire
 .bretour {
-  font-size: larger;
+  font-size: medium;
   background-color: #ffffff;
   border-radius: 59px;
   color: #172169;
@@ -32,13 +32,17 @@
   cursor: pointer;
   margin: 20px auto;
   border-color: #172169;
-  padding: 15px 43px;
+  padding: 9px 43px;
   display: inline-flex;
   align-items: center;
+  min-width: 200px;
+  justify-content: center;
+  margin-right: 12px;
+  margin-top: 40px;
 }
 
 .bsuivant {
-  font-size: larger;
+  font-size: medium;
   background-color: #172169;
   border-radius: 59px;
   color: #ffffff;
@@ -48,8 +52,11 @@
   cursor: pointer;
   margin: 20px auto;
   border-color: #172169;
-  
-  padding: 15px 43px;
+  min-width: 200px;
+  justify-content: center;
+  margin-left: 12px;
+  margin-top: 40px;
+  padding: 9px 43px;
   display: inline-flex;
   align-items: center;
   &:hover {

@@ -60,6 +60,7 @@ end
 def cover_page
   @apply = Apply.find(params[:id])
   @user = User.where(user_id: @apply.user_id)
+  raise
 end
 
 def share
