@@ -42,9 +42,12 @@ class RentfilesController < ApplicationController
 
   def update
     rentfile = Rentfile.find(params[:id])
+    UpdateImageTagsJob.perform_now(rentfile.apply)
     rentfile.update(rentfile_params)
     apply = rentfile.apply
+
     redirect_to apply_path(apply)
+
   end
 
 private
