@@ -8,11 +8,11 @@ class UpdateImageTagsJob < ApplicationJob
     # end
 
     all_documents = apply.rentfiles.map(&:photos).flatten
-    all_documents.each_with_index do |doc, index|
-      new_key = "#{index}-#{doc.key}"
-      Cloudinary::Api.update(doc.key, tags: "#{apply.id}")
-      Cloudinary::Uploader.rename(doc.key, new_key, options = {overwrite: true})
-      doc.blob.update(key: new_key)
+    all_documents.each_with_index do |photo, index|
+      new_key = "#{index}-#{photo.key}"
+      Cloudinary::Api.update(photo.key, tags: "#{apply.id}")
+      Cloudinary::Uploader.rename(photo.key, new_key, options = {overwrite: true})
+      photo.blob.update(key: new_key)
     end
   end
 end
