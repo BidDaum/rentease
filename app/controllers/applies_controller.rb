@@ -47,12 +47,13 @@ def update
   @next_type = required_docs[1 - @apply.checklist]
   @apply.user = current_user
   @apply.update(apply_params)
-  # @apply.assign_attributes(apply_params) 
+  # @apply.assign_attributes(apply_params)
   redirect_to apply_path(@apply)
 end
 
 def finalized_apply
   @apply = Apply.find(params[:id])
+  @link = "https://res.cloudinary.com/dx3uj4h7t/image/multi/v1623778699/<%= @apply.id %>.pdf"
   UpdateImageTagsJob.perform_now(@apply)
   @merged_pdf = Cloudinary::Uploader.multi(@apply.id, :format => 'pdf')
 end
