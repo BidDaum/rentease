@@ -4,14 +4,41 @@
   border-radius: 59px;
   color: #172169;
   text-align: center;
-  width: fit-content;
   transition: all 0.5s;
   cursor: pointer;
   margin: 20px auto;
   border-color: #172169;
-  padding: 15px 43px;
+  padding: 10px 30px;
   display: inline-flex;
   align-items: center;
+  border-style: inset;
+  width: -webkit-fill-available;
+  justify-content: center;
+  border-width: 2px;
+}
+
+.boptionnel {
+  font-size: regular;
+  background-color: #1EDD88;
+  border-radius: 59px;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 20px auto;
+  border-color: #1EDD88;
+  width: -webkit-fill-available;
+  justify-content: center;
+
+
+  padding: 10px 30px;
+  display: inline-flex;
+  align-items: center;
+  &:hover {
+    background-color: #88DEB0;
+    text-decoration: none;
+    color: grey;
+  }
 }
 
 .bgenerer {
@@ -20,17 +47,19 @@
   border-radius: 59px;
   color: #ffffff;
   text-align: center;
-  width: fit-content;
   transition: all 0.5s;
   cursor: pointer;
   margin: 20px auto;
   border-color: #172169;
+  width: -webkit-fill-available;
+  justify-content: center;
 
-  padding: 15px 43px;
+
+  padding: 10px 30px;
   display: inline-flex;
   align-items: center;
   &:hover {
-    background-color: #0e1652;
+    background-color: #377A98;
     text-decoration: none;
     color: white;
   }
@@ -39,9 +68,32 @@
 .background-page {
   min-height: 100%;
   min-width: 100%;
-  background: url("https://source.unsplash.com/collection/10609673");
+  // background: url("https://source.unsplash.com/collection/10609673");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
+
+.lastcontainer {
+  min-height: 100%;
+  min-width: 100%;
+  display: inline-flex;
+  background: url("https://source.unsplash.com/bU5BjwyQbOM/1280x720");
+  align-items: center;
+  padding: 50px 100px;
+  > div {
+    flex: 0 0 auto;
+    &:first-child {
+      width: 50%;
+    }
+    &:last-child {
+      width: 40%;
+    }
+  }
+}
+
+#pages-finalized h1 {
+    color: white;
+}
+

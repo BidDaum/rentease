@@ -67,16 +67,22 @@
 
 <div class="lastcontainer">
 
-  <br></br>
-  <h4 class="text-center" style="margin-bottom: 2em">Bravo, vous avez chargé 100% des documents obligatoires</h4>
+  <div>
+    <h1 id= "pages-finalized" style="margin-bottom: 2em; text-align: left; color: white;">Bravo, vous avez chargé 100% des documents obligatoires</h1>
+  </div>
 
-  <div class="row align-items-center">
+  <div class="d-flex flex-column align-items-center bg-white rounded" style="padding: 30px; margin-left: auto;">
 
     <%=  link_to("Générer mon dossier en PDF", finalized_apply_path(@apply), class:"bgenerer") %>
     <%=  link_to("Consulter mes fichiers téléchargés", apply_path(@apply), class:"bconsulter") %>
+    <%=  link_to("Ajouter des documents optionels", href="#ancre", class:"boptionnel") %>
 
   </div>
-  <p class="text-center">Vous pouvez ajouter des documents optionels ci-dessous</p>
+</div>
+
+
+<h3 id="ancre" style="text-align: center; color: black; padding-top: 40px">Ajouter vos documents optionnels</h3>
+
 
 <div class= "cform">
     <div class="row align-items-center">
