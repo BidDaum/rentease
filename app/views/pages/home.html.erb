@@ -5,28 +5,21 @@
             <div class="mask rgba-black-strong">
 
                 <div class="container-fluid d-flex align-items-center justify-content-center h-100">
-
                     <div class="row d-flex justify-content-center text-center">
-
                         <div class="col-md-10">
 
                             <!-- Heading -->
-                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2 whitefont ">Rentease</h2>
-
-                            <!-- Divider -->
-                            <hr class="hr-light">
+                            <h2 class="display-4 white-text pt-5 mb-2 whitefont" style="color:#88DEB1">Rentease</h2>
 
                             <!-- Description -->
-                            <h4 class="white-text my-4 whitefont">La location simple 
+                            <h4 class="white-text my-4 whitefont ">La location simple 
                             et sûre.</i></h4>
 
-                            <h4 class="whitefont">Sécurisez votre dossier de location maintenant</h4>
-                            <br>
-                        <%= link_to 'Start', new_apply_path, class:"bcta" %>
+                            <h4 class="whitefont ">Sécurisez maintenant votre dossier de location</h4>
+                            
+                            <%= link_to 'Créer mon dossier', new_apply_path, class:"bcta" %>
                         </div>
-
                     </div>
-
                 </div>
 
             </div>
@@ -52,8 +45,7 @@
                             <div class="carousel-inner z-depth-1-half" role="listbox">
                                 <!--First slide-->
                                 <div class="carousel-item active">
-                                    <img class="d-block w-100 imglock" src="https://wallpaperaccess.com/full/2655666.jpg"
-                                        alt="First slide">
+                                    <%= image_tag "Safe-amico.png", class: "d-block w-100 imglock" %>
                                 </div>
                                 <!--/First slide-->
 
@@ -69,7 +61,7 @@
                     <div>
 
                         <!--Excerpt-->
-                        <h4 class="mb-3 centertexthome"><strong>Le Problème</strong></h4>
+                        <h2 class="mb-5 font-weight-bold" style="color:#88DEB1">Le Problème</h2>
                         <h4 class="mb-3 centertexthome">210 000 usurpations d'identité par an en France</h4>
                         <br></br>
                         <p class="centertexthome">Lors d’un processus de location, nous partageons de nombreux documents d’identité</p>
@@ -98,7 +90,7 @@
             <section id="best-features" class="text-center">
          <hr class="my-5">
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold">Notre Mission</h2>
+                <h2 class="mb-5 font-weight-bold" style="color:#88DEB1">Notre Mission</h2>
 
                 <!--Grid row-->
                 <div class="row d-flex justify-content-center mb-4">
@@ -156,7 +148,7 @@
             <section id="examples" class="text-center">
 
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold">Témoignages</h2>
+                <h2 class="mb-5 font-weight-bold" style="color:#88DEB1">Témoignages</h2>
 
                 <!--Grid row-->
                 <div class="row">
@@ -170,7 +162,7 @@
                         </div>
 
                         <h4 class="my-4 font-weight-bold">Adrien</h4>
-                        <p class="grey-text">Depuis deux ans un usurpateur utilise mon identité pour souscrire des prêts à la consomation. Si j'avais pu utiliser Rentease ma vie n'aurais pas tourné au cauchemard.</p>
+                        <p class="temoin">Depuis deux ans un usurpateur utilise mon identité pour souscrire des prêts à la consomation. Si j'avais pu utiliser Rentease ma vie n'aurais pas tourné au cauchemard.</p>
 
                     </div>
                     <!--Grid column-->
@@ -184,7 +176,7 @@
                         </div>
 
                         <h4 class="my-4 font-weight-bold">Léa et ses amis</h4>
-                        <p class="grey-text">Nous avons utilisé Rentease pour créer notre dossier facilement. Notre propriétaire à beacuoup apprécié la facilité de recevoir seulement 4 dossiers uniques plutot que de nombreuses piéces jointes mal ordonnées.</p>
+                        <p class="temoin">Nous avons utilisé Rentease pour créer notre dossier facilement. Notre propriétaire à beacuoup apprécié la facilité de recevoir seulement 4 dossiers uniques plutot que de nombreuses piéces jointes mal ordonnées.</p>
 
                     </div>
                     <!--Grid column-->
@@ -198,7 +190,7 @@
                         </div>
 
                         <h4 class="my-4 font-weight-bold">Brice et Carla</h4>
-                        <p class="grey-text">Brice avait eu une mauvaise expérience sur Leboncoin à cause d'un faux propriétaire spécialisé dans l'usurpation d'identité. Cette fois-çi tout s'est bien passé grâce à Rentease.</p>
+                        <p class="temoin">Brice avait eu une mauvaise expérience sur Leboncoin à cause d'un faux propriétaire spécialisé dans l'usurpation d'identité. Cette fois-çi tout s'est bien passé grâce à Rentease.</p>
 
                     </div>
                     <!--Grid column-->
@@ -209,6 +201,10 @@
             </section>
             <!--Section: Examples-->
 
+            <div class="row d-flex justify-content-center text-center", style="margin-bottom: 20px">
+                <%= link_to 'Créer mon dossier', new_apply_path, class:"bcta" %>
+            </div>
+            
         </div>
     </main>
     <!--Main layout-->

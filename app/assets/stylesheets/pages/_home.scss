@@ -3,15 +3,19 @@ html,
 body,
 header,
 #intro {
-    height: 88%;
+    height: 500px;
 }
 
 #intro {
-    background: asset-url("background.png") no-repeat center center fixed;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=673&q=80");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.col-md-10 {
+  margin-top: 50px;
 }
 
 .top-nav-collapse {
@@ -31,7 +35,6 @@ header,
   .imglock {
     opacity: 0.8;
   }
-
  
   .whitefont {
     color: white;
@@ -43,4 +46,17 @@ header,
 
   .img-fluid {
     height: 220px;
+  }
+
+  .d-block {
+    margin-left: 30px;
+  }
+
+  .temoin {
+    font-size: 0.8rem;
+  }
+
+  .row {
+    margin-right: 0px;
+    margin-left: 0px;
   }
