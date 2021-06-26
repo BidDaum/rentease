@@ -17,7 +17,7 @@
       <iframe style="height: 90vh; width: 100%;"; id="iframepdf" src="https://res.cloudinary.com/dx3uj4h7t/image/multi/v1623778699/<%=@apply.id%>.pdf"></iframe>
     </div> -->
 
-    <div class="sharing-method d-flex flex-column align-items-center bg-white rounded" style="padding: 25px; margin-right: 30px; margin-left: 40px; margin-top: auto;">
+    <div class="sharing-method d-flex flex-column align-items-center bg-white rounded" style="padding: 25px; margin-right: 30px; margin-left: 40px; margin-top: auto; margin-bottom: 40px;">
       <h3 style="font-size: 20px;">Obtenez votre lien unique</h3>
       <div id="shared-apply">
         <div style= "margin-right: 20px">
@@ -34,7 +34,7 @@
       </div>
 
       <h3 style="font-size: 20px; margin-top: 20px;">Partagez votre dossier</h3>
-      <div style="margin-bottom: 20px; margin-top: 20px; margin-left:8px;" class="d-flex align-items-center">
+      <div style="margin-top: 20px; margin-left:8px;" class="d-flex align-items-center">
         <div style="margin-right: 10px">
           <%= simple_form_for @apply, url: share_apply_path(@apply), method: :post do |f| %>
               <%= f.input :email%>
