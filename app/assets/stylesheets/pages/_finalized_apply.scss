@@ -5,19 +5,8 @@
 //   width: 100%;
 //   box-shadow: 0 0 15px rgba(20,8,80,0.2);
 //   margin: 0;
-// }
+//
 
-#finalized-apply-banner {
-      height: 30%;
-  }
-
-#finalized-apply-banner {
-    background: asset-url("monprofil_pic.jpg") no-repeat center bottom fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
 
 .bfinalized {
   font-size: regular;
@@ -40,40 +29,32 @@
   display:flex;
   align-items: center;
   justify-content: space-around;
-  padding-left: 20px;
-  padding-right: 100px;
-  margin-bottom: 40px;
-  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 .sharing-method {
-  text-align: center;
-  width: 100%;
-  background-color: #ffffff;
-  text-align: center;
-  border-color: black;
-  text-align: center;
-  margin: 45px;
-  position: relative;
-  padding: 32px;
-  box-shadow: 0 0 15px rgba(20,8,80,0.2);
+  width: 75%;
+  opacity: 0.9;
+  height: 344px;
 }
 
 .apply-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 90%;
-  margin: 35px auto;
-  margin-top: 20px;
-
+  height: 100%;
+  width: 100%;
+  display: inline-flex;
+  background: url("https://source.unsplash.com/0z888hDBms8/1280x720");
+  padding: 20px;
   > div {
     flex: 0 0 auto;
     &:first-child {
-      width: 60%;
+      width: 35%;
     }
     &:last-child {
-      width: 35%;
+      width: 50%;
     }
   }
 }
