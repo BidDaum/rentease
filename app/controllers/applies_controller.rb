@@ -47,7 +47,7 @@ def update
   @next_type = required_docs[1 - @apply.checklist]
   @apply.user = current_user
   @apply.update(apply_params)
-  # @apply.assign_attributes(apply_params)
+  # @apply.assign_attributes(apply_params) 
   redirect_to apply_path(@apply)
 end
 
@@ -60,6 +60,7 @@ end
 def cover_page
   @apply = Apply.find(params[:id])
   @user = User.where(user_id: @apply.user_id)
+  raise
 end
 
 def share

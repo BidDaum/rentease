@@ -1,4 +1,11 @@
-<div  class="apply-container">
+<div id="finalized-apply-banner" class="view">
+  <div class="row d-flex justify-content-center text-center">
+    <div><h2 class="display-4 font-weight-bold white-text pt-5 mb-2 whitefont">Partagez votre dossier</h2></div>
+  </div>
+</div>
+
+
+<div class="apply-container">
 
   <div>
     <iframe style="height: 90vh; width: 100%;"; id="iframepdf" src="https://res.cloudinary.com/dx3uj4h7t/image/multi/v1623778699/<%=@apply.id%>.pdf"></iframe>
@@ -6,20 +13,23 @@
 
   <div class="sharing-method">
 
+    <h2>Obtenez votre lien unique</h2>
     <div id="shared-apply">
       <div>
         <input type="text" value="https://res.cloudinary.com/dx3uj4h7t/image/multi/v1623778699/<%= @apply.id %>.pdf" id="myInput">
       </div>
-      <div style="margin-top: 1vw">
-        <button class="bretour" onclick="myFunction()">Copy text</button>
+      <div style="margin-top: 1vw justify-content-between padding: 1vw">
+        <button class="bfinalized" onclick="myFunction()">Copier</button>
       </div>
     </div>
 
 
-    <div id= "finalized_apply" class= "cform">
+    <div style="margin-bottom: 20px; margin-top: 20px">
       <%= simple_form_for @apply, url: share_apply_path(@apply), method: :post do |f| %>
-        <%= f.input :email, label: "Share with a friend !", placeholder: "Email" %>
-        <%= f.submit "Envoyer", class: "bsuivant" %>
+        <div class="row d-flex justify-content-center text-center">
+          <%= f.input :email, label: "Partagez votre dossier", placeholder: "Email" %>
+        </div>
+        <%= f.submit "Envoyer", class: "bfinalized" %>
       <% end %>
     </div>
   </div>
