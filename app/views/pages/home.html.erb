@@ -13,16 +13,13 @@
                             <!-- Heading -->
                             <h2 class="display-4 font-weight-bold white-text pt-5 mb-2 whitefont ">Rentease</h2>
 
-                            <!-- Divider -->
-                            <hr class="hr-light">
-
                             <!-- Description -->
                             <h4 class="white-text my-4 whitefont">La location simple 
                             et sûre.</i></h4>
 
-                            <h4 class="whitefont">Sécurisez votre dossier de location maintenant</h4>
-                            <br>
-                        <%= link_to 'Start', new_apply_path, class:"bcta" %>
+                            <h4 class="whitefont">Sécurisez maintenant votre dossier de location</h4>
+                            
+                        <%= link_to 'Créer mon dossier', new_apply_path, class:"bcta" %>
                         </div>
 
                     </div>
@@ -69,7 +66,7 @@
                     <div>
 
                         <!--Excerpt-->
-                        <h4 class="mb-3 centertexthome"><strong>Le Problème</strong></h4>
+                        <h2 class="mb-5 font-weight-bold">Le Problème</h2>
                         <h4 class="mb-3 centertexthome">210 000 usurpations d'identité par an en France</h4>
                         <br></br>
                         <p class="centertexthome">Lors d’un processus de location, nous partageons de nombreux documents d’identité</p>
@@ -209,6 +206,10 @@
             </section>
             <!--Section: Examples-->
 
+            <div class="row d-flex justify-content-center text-center", style="margin-bottom: 20px">
+                <%= link_to 'Créer mon dossier', new_apply_path, class:"bcta" %>
+            </div>
+            
         </div>
     </main>
     <!--Main layout-->

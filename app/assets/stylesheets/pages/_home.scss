@@ -3,7 +3,7 @@ html,
 body,
 header,
 #intro {
-    height: 88%;
+    height: 500px;
 }
 
 #intro {
@@ -43,4 +43,8 @@ header,
 
   .img-fluid {
     height: 220px;
+  }
+
+  .d-block {
+    margin-left: 30px;
   }
