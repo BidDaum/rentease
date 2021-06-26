@@ -45,37 +45,37 @@
               <div class="zone">
                 <div id="dropZ">
                   <i class="fa fa-cloud-upload"></i>
-                  <div>Faites glisser votre document ici.</div>                    
+                  <div>Faites glisser votre document ici.</div>
                   <span>Ou</span>
-                  <div class="selectFile">       
+                  <div class="selectFile">
                     <label for="file">Téléchargez le</label>
                     <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
                   </div>
                   <p>Poids limite : 10 MB</p>
-                  </div> 
+                  </div>
                </div>
           </div>
         </div>
         <button class="bretour" href="/../../../apply(@apply)">Précédent</button>
                 <%= f.submit "Suivant", class: "bsuivant" %>
-                
+
               <% end %>
 
 <% else %>
 
+<body class=background-page>
 
-<div class="container">
+<div class="lastcontainer">
 
   <br></br>
+
   <h4 class="text-center">Bien joué, vous avez chargé 100% des documents obligatoires</h4>
   
   <div class="row align-items-center">
-    
-    <%=  link_to("Consulter mes fichiers téléchargés", apply_path(@apply), class:"bsuivant") %>
-    
-    
-    <%=  link_to("Générer mon dossier en PDF", finalized_apply_path(@apply), class:"bsuivant") %>
-   
+
+    <%=  link_to("Générer mon dossier en PDF", finalized_apply_path(@apply), class:"bgenerer") %>
+    <%=  link_to("Consulter mes fichiers téléchargés", apply_path(@apply), class:"bconsulter") %>
+
   </div>
   <p class="text-center">Vous pouvez ajouter des documents optionels ci-dessous</p>
 
@@ -91,14 +91,14 @@
             <h4 class="mt-2">Attestation d'employeur</h4>
               <div id="dropZ">
                 <i class="fa fa-cloud-upload"></i>
-                <div>Faites glisser votre document ici.</div>                    
+                <div>Faites glisser votre document ici.</div>
                 <span>Ou</span>
-                <div class="selectFile">       
+                <div class="selectFile">
                   <label for="file">Téléchargez la</label>
                   <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
                 </div>
               <p>Poids limite : 10 MB</p>
-              </div> 
+              </div>
           </div>
       </div>
     </div>
@@ -106,39 +106,39 @@
   <% end %>
 </div>
 
-      
-  
+
+
 <div class= "cform">
       <div class="row align-items-center">
         <div class="col-6">
+
               <img src= "https://media.giphy.com/media/h0MTqLyvgG0Ss/giphy.gif" class="gifsizetwo"> 
+          
         </div>
         <div class="col-6">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
               <%= f.hidden_field :name, value: @type[1] %>
-            
-  
+
+
             <div class="zone">
               <h4>Dernier avis d'imposition</h4>
                 <div id="dropZ">
                   <i class="fa fa-cloud-upload"></i>
-                  <div>Faites glisser votre document ici.</div>                    
+                  <div>Faites glisser votre document ici.</div>
                   <span>Ou</span>
-                  <div class="selectFile">       
+                  <div class="selectFile">
                     <label for="file">Téléchargez le</label>
                     <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
                   </div>
                 <p>Poids limite : 10 MB</p>
-                </div> 
+                </div>
             </div>
         </div>
       </div>
       <%= f.submit "Ajouter à votre dossier", class: "bsuivant" %>
-  
+
     <% end %>
 </div>
-  
-
 
 
 <div class= "cform">
@@ -149,31 +149,31 @@
         <div class="col-6">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
               <%= f.hidden_field :name, value: @type[2] %>
-            
-  
+
+
             <div class="zone">
               <h4>Taxe foncière</h4>
                 <div id="dropZ">
                   <i class="fa fa-cloud-upload"></i>
-                  <div>Faites glisser votre document ici.</div>                    
+                  <div>Faites glisser votre document ici.</div>
                   <span>Ou</span>
-                  <div class="selectFile">       
+                  <div class="selectFile">
                     <label for="file">Téléchargez le</label>
                     <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
                   </div>
                 <p>Poids limite : 10 MB</p>
-                </div> 
+                </div>
             </div>
         </div>
       </div>
       <%= f.submit "Ajouter à votre dossier", class: "bsuivant" %>
-  
+
     <% end %>
-</div>  
+</div>
 
-  
 
-    
+
+
 <div class= "cform">
       <div class="row align-items-center">
         <div class="col-6">
@@ -182,60 +182,53 @@
         <div class="col-6">
             <%= simple_form_for [@apply, @rentfile] do |f|%>
               <%= f.hidden_field :name, value: @type[3] %>
-            
-  
+
+
             <div class="zone">
               <h4>Relevé d'identité bancaire</h4>
                 <div id="dropZ">
                   <i class="fa fa-cloud-upload"></i>
-                  <div>Faites glisser votre document ici.</div>                    
+                  <div>Faites glisser votre document ici.</div>
                   <span>Ou</span>
-                  <div class="selectFile">       
+                  <div class="selectFile">
                     <label for="file">Téléchargez le</label>
                     <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
                   </div>
                 <p>Poids limite : 10 MB</p>
-                </div> 
+                </div>
             </div>
         </div>
       </div>
       <%= f.submit "Ajouter à votre dossier", class: "bsuivant" %>
-  
+
     <% end %>
 </div>
 
-
-
-  
-
-  
-  
-  
 
 <div class= "cform">
       <div class="row align-items-center">
         <div class="col-12">
           <%= simple_form_for [@apply, @rentfile] do |f|%>
           <%= f.input :name, label: "Donnez un nom à votre fichier additionel" %>
-         
-            
-  
+
+
+
             <div class="zone">
                 <div id="dropZ">
                   <i class="fa fa-cloud-upload"></i>
-                  <div>Faites glisser votre document ici.</div>                    
+                  <div>Faites glisser votre document ici.</div>
                   <span>Ou</span>
-                  <div class="selectFile">       
+                  <div class="selectFile">
                     <label for="file">Téléchargez le</label>
                     <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
                   </div>
                 <p>Poids limite : 10 MB</p>
-                </div> 
+                </div>
             </div>
         </div>
       </div>
       <%= f.submit "Ajouter à votre dossier", class: "bsuivant" %>
-  
+
     <% end %>
 </div>
 
@@ -245,20 +238,20 @@
     <div class="col-12">
       <%= simple_form_for [@apply, @rentfile] do |f|%>
       <%= f.input :name, label: "Donnez un nom à votre fichier additionel" %>
-     
-        
+
+
 
         <div class="zone">
             <div id="dropZ">
               <i class="fa fa-cloud-upload"></i>
-              <div>Faites glisser votre document ici.</div>                    
+              <div>Faites glisser votre document ici.</div>
               <span>Ou</span>
-              <div class="selectFile">       
+              <div class="selectFile">
                 <label for="file">Téléchargez le</label>
                 <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
               </div>
             <p>Poids limite : 10 MB</p>
-            </div> 
+            </div>
         </div>
     </div>
   </div>
@@ -272,20 +265,20 @@
     <div class="col-12">
       <%= simple_form_for [@apply, @rentfile] do |f|%>
       <%= f.input :name, label: "Donnez un nom à votre fichier additionel" %>
-     
-        
+
+
 
         <div class="zone">
             <div id="dropZ">
               <i class="fa fa-cloud-upload"></i>
-              <div>Faites glisser votre document ici.</div>                    
+              <div>Faites glisser votre document ici.</div>
               <span>Ou</span>
-              <div class="selectFile">       
+              <div class="selectFile">
                 <label for="file">Téléchargez le</label>
                 <%= f.input :photos, as: :file, label: false, input_html: { multiple: true } %>
               </div>
             <p>Poids limite : 10 MB</p>
-            </div> 
+            </div>
         </div>
     </div>
   </div>
@@ -295,15 +288,11 @@
 </div>
 
 
-
-  
-   
-  
-
-  
-        
           <% end %>
         </div>
       </div>
     </div>
 </div>
+
+</body>
+

@@ -21,6 +21,9 @@ adrien = User.new(password: "123456", email: "adrien@rentease.com", name: "Bella
 id= "https://res.cloudinary.com/dx3uj4h7t/image/upload/v1623431434/5xmmcdrbhygi0v5xsozgc3czxwec.jpg"
 idmod = "https://res.cloudinary.com/dx3uj4h7t/image/upload/l_DERFER-removebg-preview_xmllht/v1623431434/5xmmcdrbhygi0v5xsozgc3czxwec.jpg"
 william.save!
+guillaume.save!
+brice.save!
+adrien.save!
 =begin file = URI.open(id)
 apply1 = Apply.new(title: "Dossier de William")
 apply1.user = william
