@@ -1,3 +1,7 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+</head>
 <body>
 
   <!-- <div id="finalized-apply-banner" class="view">
@@ -37,7 +41,7 @@
           <% end %>
         </div>
         <div>
-          <button class="bfinalized" style="margin-top:31px;">Envoyer</button>
+          <button class="third bfinalized" style="margin-top:31px;">Envoyer</button>
         </div>
       </div>
     </div>
@@ -60,5 +64,9 @@
     /* Copy the text inside the text field */
     document.execCommand("copy");
   }
+
+    document.querySelector(".third").addEventListener('click', function(){
+    Swal.fire("Merci d'avoir utilisé Rentease!", "Votre dossier a été envoyé avec succès.", "success");
+  });
   </script>
 </body>
