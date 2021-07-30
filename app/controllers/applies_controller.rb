@@ -53,7 +53,7 @@ end
 
 def finalized_apply
   @apply = Apply.find(params[:id])
-  @link = "https://res.cloudinary.com/dx3uj4h7t/image/multi/v1623778699/<%= @apply.id %>.pdf"
+  @link = "https://res.cloudinary.com/dx3uj4h7t/image/multi/v1624719652/<%= @apply.id %>.pdf"
   UpdateImageTagsJob.perform_now(@apply)
   @merged_pdf = Cloudinary::Uploader.multi(@apply.id, :format => 'pdf')
 end
